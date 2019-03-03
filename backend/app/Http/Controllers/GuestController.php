@@ -23,6 +23,6 @@ class GuestController extends Controller
      */
     public function finished()
     {
-        return response()->view('guests.thanks')->header("Refresh", '5;URL=/');
+        return response()->view('guests.thanks')->header("POST", '5;URL=/');
     }
 }

@@ -25,8 +25,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'isAdmin', 'password', 'remember_token',
     ];
 
 
+    public function isAdmin()
+    {
+        return 1;
+    }
 }

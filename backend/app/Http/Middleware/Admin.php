@@ -3,9 +3,12 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class Admin
 {
+
+
     /**
      * Handle an incoming request.
      *
@@ -15,9 +18,14 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()->isAdmin == 1){
-            return $next($request);
+        if(isset(auth()->user()->isAdmin)){
+
+            if(auth()->user()->isAdmin == 1){
+                return $next($request);
+            }
+
         }
-        return redirect('home')->with('error','You have not admin access');
+
+        return redirect()->route('login')->with('error','You dont have admin access');
     }
 }

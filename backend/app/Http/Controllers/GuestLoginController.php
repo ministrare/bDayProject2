@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
-use App\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 
 class GuestLoginController extends Controller
 {
@@ -20,31 +21,51 @@ class GuestLoginController extends Controller
         return view('guestAuth.login');
     }
 
-    public function login(Request $request)
+    public function validation($request)
     {
+        return $this->validate($request, [
+            'email' => 'required|unique:users|max:255',
+            'firstName' => 'required',
+            'lastName' => 'required',
+        ]);
+    }
 
+    public function register(Request $request)
+    {
+        $this->validation($request);
         $credentials = $request->only('email', 'firstName', 'lastName');
-        $user = User::where('email', '=', Input::get('email'))->first();
+
+        $user = User::create([
+            'firstname' => $credentials['firstName'],
+            'lastname' => $credentials['lastName'],
+            'name' => $credentials['firstName']. ' ' . $credentials['lastName'],
+            'email' => $credentials['email'],
+            'password' => Hash::make('default'),
+        ]);
+
+        return $user;
+    }
+
+    public function Authenticate(Request $request)
+    {
+        $user = User::where('email', '=', $request['email'])->first();
 
         if(!isset($user)){
-            $validatedData = $request->validate([
-                'email' => 'required|unique:users|max:255',
-                'firstName' => 'required',
-                'lastName' => 'required',
-            ]);
-
-            User::create([
-                'firstname' => $credentials['firstName'],
-                'lastname' => $credentials['lastName'],
-                'name' => $credentials['firstName']. ' ' . $credentials['lastName'],
-                'email' => $credentials['email'],
-                'password' => Hash::make($data['password']),
-            ]);
+            $user = $this->register($request);
         }
 
+        if(Auth::attempt(['email' => $request->email, 'password' => 'default']))
+        {
+            return $user;
+        }
 
+        die ('something went wrong');
+    }
 
-        return redirect()->route('guest.playlist');
+    public function login(Request $request)
+    {
+        $user = $this->Authenticate($request);
+        return redirect()->route('guest.playlist', compact($user));
     }
 
     public function logout()

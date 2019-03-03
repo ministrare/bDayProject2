@@ -4,17 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Playlist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class PlaylistController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function index()
     {
-        return view('guests.playlist');
+        if(!$user = Auth::user()){
+            return redirect()->route('login')->with(['Status', 'Please log in first..']);
+        }
+
+        return view('guests.playlist', compact($user));
     }
 
     /**
