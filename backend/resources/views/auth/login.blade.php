@@ -9,7 +9,7 @@
             </span>
             <span class="text-wishes">
                 <h2 class="light-big text-white line-he">Before we sail!</h2>
-                <h2 class="big-italic text-white line-he">Signup with the captain!</h2>
+                <h2 class="big-italic text-white line-he">Signup as the captain!</h2>
             </span>
             <span class="anchor-box">
                 <img class="r-right" src="/images/Path 34.svg">
