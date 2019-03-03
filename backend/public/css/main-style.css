@@ -312,6 +312,7 @@ label {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500; 
     font-size: 1.2vw;
+    text-decoration: none;
 }
 
 .dark{
@@ -336,6 +337,11 @@ label {
     justify-content: space-between;
     width: 83%;
 }
+
+.text-align-right{
+    justify-content: flex-end;
+}
+
 .login{
     margin: 0 auto 25px auto;
     display: flex;

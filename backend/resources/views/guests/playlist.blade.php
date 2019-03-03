@@ -75,8 +75,7 @@
              -->
             </div>
         </form>
-        <div class="btn-div bottom">
-            <button class="button dark">Home</button>
+        <div class="btn-div bottom text-align-right">
             <a href="{{ route('guest.done') }}" class="button done dark" type="button">Done</a>
         </div>
     </div>
