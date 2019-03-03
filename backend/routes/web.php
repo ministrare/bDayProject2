@@ -42,8 +42,19 @@ Route::group(['prefix' => 'admin'], function() {
         'uses' => 'Auth\LoginController@logout'
     ]);
 
+    // Registration Routes...
+    Route::get('register', [
+        'as' => 'register',
+        'uses' => 'Auth\RegisterController@showRegistrationForm'
+    ]);
+
+    Route::post('register', [
+        'as' => '',
+        'uses' => 'Auth\RegisterController@register'
+    ]);
+
     // Password Reset Routes...
-    Route::post('password/email', [
+    /*Route::post('password/email', [
         'as' => 'password.email',
         'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail'
     ]);
@@ -61,16 +72,5 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('password/reset/{token}', [
         'as' => 'password.reset',
         'uses' => 'Auth\ResetPasswordController@showResetForm'
-    ]);
-
-    // Registration Routes...
-    Route::get('register', [
-        'as' => 'register',
-        'uses' => 'Auth\RegisterController@showRegistrationForm'
-    ]);
-
-    Route::post('register', [
-        'as' => '',
-        'uses' => 'Auth\RegisterController@register'
-    ]);
+    ]);*/
 });
