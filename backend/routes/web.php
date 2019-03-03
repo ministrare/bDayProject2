@@ -12,6 +12,12 @@
 */
 
 Route::get('/', 'GuestController@index')->name('home');
+Route::get('/done', 'GuestController@finished')->name('guest.done');
+
+Route::get('/login', 'GuestLoginController@showLoginForm')->name('guest.login');
+Route::post('login', 'GuestLoginController@login')->name('guest.login');
+Route::get('/playlist', 'PlaylistController@index')->name('guest.playlist');
+
 
 // Login System: /admin and /admin/login
 Route::group(['prefix' => 'admin'], function() {
@@ -68,4 +74,3 @@ Route::group(['prefix' => 'admin'], function() {
         'uses' => 'Auth\RegisterController@register'
     ]);
 });
-

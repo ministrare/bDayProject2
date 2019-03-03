@@ -14,7 +14,7 @@ class PlaylistController extends Controller
      */
     public function index()
     {
-        //
+        return view('guests.playlist');
     }
 
     /**

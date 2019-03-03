@@ -15,4 +15,14 @@ class GuestController extends Controller
     {
         return view('guests.home');
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function finished()
+    {
+        return response()->view('guests.thanks')->header("Refresh", '5;URL=/');
+    }
 }

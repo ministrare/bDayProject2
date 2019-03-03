@@ -27,6 +27,14 @@ img, object, embed, video {
 	http://goldengridsystem.com/
 */
 
+#blockColorblindContent{
+  display: none;
+}
+
+body{
+    min-height: 100vh;
+}
+
 .fluid {
 	clear: both;
 	margin-left: 0;
@@ -50,9 +58,11 @@ img, object, embed, video {
 	width: 86.45%;
 	padding-left: 2.275%;
 	padding-right: 2.275%;
-	clear: none;
-    float: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .zeroMargin_mobile {
@@ -112,9 +122,9 @@ img, object, embed, video {
     color:white;
 }
 .main-body{
-
     background-color: #1A73BF;
     min-height: 200px;
+    flex: 1 1 auto;
 }
 .invite-text{
     text-align: center;
@@ -469,9 +479,9 @@ footer{
         color:white;
     }
     .main-body{
-
         background-color: #1A73BF;
         min-height: 200px;
+        padding-bottom: 1px;
     }
     .invite-text{
         text-align: center;
@@ -586,10 +596,8 @@ footer{
 	max-width: 1232px;
 	padding-left: 0.6666%;
 	padding-right: 0.6666%;
-	margin: auto;
 	clear: none;
 	float: none;
-	margin-left: auto;
 }
    
     .light-big{
