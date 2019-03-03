@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="79.464" height="85.523" viewBox="0 0 79.464 85.523">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e51f20;
+      }
+
+      .cls-2 {
+        fill: #59463f;
+      }
+
+      .cls-3 {
+        fill: #b5cfea;
+      }
+    </style>
+  </defs>
+  <g id="Group_7" data-name="Group 7" transform="translate(-1646.289 -951.079)">
+    <path id="Path_21" data-name="Path 21" class="cls-1" d="M2019.556,823.217l78.93-17.612-4.566,17.612-58.708,13.7Z" transform="matrix(1, -0.017, 0.017, 1, -387.019, 235.06)"/>
+    <rect id="Rectangle_3" data-name="Rectangle 3" class="cls-2" width="2" height="59" transform="translate(1673.402 956.094) rotate(-13)"/>
+    <path id="Path_22" data-name="Path 22" class="cls-3" d="M1674.175,960.076l-20.093,58.62s10.977-7.442,32.363-7.72C1678.973,996.94,1674.175,960.076,1674.175,960.076Z"/>
+    <path id="Path_23" data-name="Path 23" class="cls-3" d="M1666.3,960.076l20.015,58.391s-10.934-7.413-32.237-7.689C1661.525,996.8,1666.3,960.076,1666.3,960.076Z" transform="translate(-242.271 827.402) rotate(-26)"/>
+  </g>
+</svg>
