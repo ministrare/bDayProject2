@@ -1,23 +1,42 @@
-@extends('layouts.admin')
+@extends('layouts.guests')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Dashboard</div>
+    <div class="main-body">
+        <div class="invite-text">
+            <span class="anchor-box">
+                <img src="./images/Path 34.svg">
+            </span>
+            <span class="text-wishes">
+                <h2 class="light-big text-white line-he">Admin Page</h2>
+                <h2 class="big-italic text-white line-he">Export your playlist & messages</h2>
+            </span>
+            <span class="anchor-box">
+                <img class="r-right" src="./images/Path 34.svg">
+            </span>
+        </div>
 
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
+        <div class="dash">
+            <!-- <img src="./images/Line 4.svg">
+             -->
+        </div>
 
-                        You are logged in!
-                    </div>
-                </div>
-            </div>
+        <div class="announcement-box big-italic text-white">
+            Admin Page
+        </div>
+        <div class="dash">
+            <!-- <img src="./images/Line 4.svg">
+             -->
+        </div>
+        <div class="btn-div bottom text-align-right">
+            <a class="button done dark" type="button" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         </div>
     </div>
 @endsection
