@@ -39,7 +39,7 @@
                 @endif
             </div>
             <div class="btn-div login">
-                <a href="{{ route('home') }}" class="button login-btn dark" type="button">Home</a>
+                <a href="{{ route('admin') }}" class="button login-btn dark" type="button">Login</a>
                 <button type="submit" class="button login-btn dark">
                     {{ __('Register') }}
                 </button>

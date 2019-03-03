@@ -17,12 +17,13 @@
         <form method="POST" action="{{ route('guest.login') }}">
             @csrf
             <div class="sing-content">
-                <input type="text" title="username" placeholder="EMAIL" id="userName">
-                <input type="text" title="password" placeholder="PASSWORD" id="pass">
+                <input type="text" name="email" title="username" placeholder="EMAIL" id="userName" >
+                <input type="text" name="firstName" title="firstname" placeholder="FIRSTNAME" id="firstName">
+                <input type="text" name="lastName" title="lastname" placeholder="LASTNAME" id="lastName">
             </div>
             <div class="btn-div login">
                 <a href="{{ route('home') }}" class="button login-btn dark" type="button">Home</a>
-                <button class="button login-btn dark" type="submit">Sign In</button>
+                <button class="button login-btn dark" type="submit">Continue</button>
             </div>
         </form>
     </div>
