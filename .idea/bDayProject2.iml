@@ -27,6 +27,7 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laravel/slack-notification-channel" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laravel/tinker" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/lcobucci/jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/league/csv" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/monolog/monolog" />

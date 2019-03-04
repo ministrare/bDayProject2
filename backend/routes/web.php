@@ -29,6 +29,9 @@ Route::get('logout', [
 
 Route::get('/done', 'GuestController@finished')->name('guest.done');
 
+Route::get('/admin/export/messages', 'ExportController@exportMessages')->name('export.messages');
+Route::get('/admin/export/songs', 'ExportController@exportSongs')->name('export.songs');
+
 // Login System: /admin and /admin/login
 Route::group(['prefix' => 'admin'], function() {
 
