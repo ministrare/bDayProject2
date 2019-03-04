@@ -67,9 +67,4 @@ class GuestLoginController extends Controller
         $user = $this->Authenticate($request);
         return redirect()->route('guest.playlist', compact($user));
     }
-
-    public function logout()
-    {
-
-    }
 }

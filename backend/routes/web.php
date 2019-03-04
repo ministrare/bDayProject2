@@ -12,12 +12,22 @@
 */
 
 Route::get('/', 'GuestController@index')->name('home');
-Route::get('/done', 'GuestController@finished')->name('guest.done');
 
 Route::get('/login', 'GuestLoginController@showLoginForm')->name('guest.login');
 Route::post('login', 'GuestLoginController@login')->name('guest.login');
-Route::get('/playlist', 'PlaylistController@index')->name('guest.playlist');
+Route::get('/playlist', 'SongController@index')->name('guest.playlist');
+Route::post('/playlist', 'SongController@store')->name('guest.song.add');
+Route::post('/playlist/message', 'MessageController@store')->name('guest.message.add');
+Route::get('/playlist/{id}', 'SongController@edit')->name('guest.song.edit');
+Route::put('/playlist/{id}', 'SongController@update')->name('guest.song.update');
+Route::delete('/playlist/{id}', 'SongController@destroy')->name('guest.song.destroy');
 
+Route::get('logout', [
+    'as' => 'logout',
+    'uses' => 'Auth\LoginController@logout'
+]);
+
+Route::get('/done', 'GuestController@finished')->name('guest.done');
 
 // Login System: /admin and /admin/login
 Route::group(['prefix' => 'admin'], function() {
@@ -37,11 +47,6 @@ Route::group(['prefix' => 'admin'], function() {
         'uses' => 'Auth\LoginController@login'
     ]);
 
-    Route::post('logout', [
-        'as' => 'logout',
-        'uses' => 'Auth\LoginController@logout'
-    ]);
-
     // Registration Routes...
     Route::get('register', [
         'as' => 'register',
@@ -53,24 +58,4 @@ Route::group(['prefix' => 'admin'], function() {
         'uses' => 'Auth\RegisterController@register'
     ]);
 
-    // Password Reset Routes...
-    /*Route::post('password/email', [
-        'as' => 'password.email',
-        'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail'
-    ]);
-
-    Route::get('password/reset', [
-        'as' => 'password.request',
-        'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm'
-    ]);
-
-    Route::post('password/reset', [
-        'as' => '',
-        'uses' => 'Auth\ResetPasswordController@reset'
-    ]);
-
-    Route::get('password/reset/{token}', [
-        'as' => 'password.reset',
-        'uses' => 'Auth\ResetPasswordController@showResetForm'
-    ]);*/
 });

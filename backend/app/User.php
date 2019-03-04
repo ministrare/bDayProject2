@@ -29,8 +29,19 @@ class User extends Authenticatable
     ];
 
 
-    public function isAdmin()
+    /**
+     * Get the message record associated with the guest.
+     */
+    public function message()
     {
-        return 1;
+        return $this->hasOne('App\Message');
+    }
+
+    /**
+     * The roles that belong to the user.
+     */
+    public function songs()
+    {
+        return $this->belongsToMany('App\Song');
     }
 }

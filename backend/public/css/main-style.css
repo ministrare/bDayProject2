@@ -287,6 +287,14 @@ label {
 .button.home{
     margin: 40px 0 0 0px;
 }
+.button.done.small{
+    margin: 0;
+    font-size: 0.8vw;
+    height: 20px;
+    padding: 0 0.5rem;
+    display: inline-block;
+    line-height: 20px;
+}
 .button, .flat-button, .action-button {
     display: inline-block;
     font-weight: 400;

@@ -4,27 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Song;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SongController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function index()
     {
-        //
-    }
+        if(!$user = Auth::user()){
+            return redirect()->route('guest.login')->with(['Status', 'Please log in first..']);
+        }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $songs = $user->songs;
+        $message = $user->message->message;
+
+        return view('guests.playlist', compact("user", "songs", "message"));
     }
 
     /**
@@ -35,51 +33,91 @@ class SongController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'artist'=>'required',
+            'songTitle'=> 'required',
+            //'url' => 'required'
+        ]);
+
+        if(!$user = Auth::user()){
+            return redirect()->route('guest.login')->with(['Status', 'Please log in first..']);
+        }
+
+        if(count($user->songs) >= 3){
+            return redirect()->route('guest.playlist')->with(['Status', 'Cannot add more then 3 songs']);
+        }
+
+        $song = new Song();
+        $song->artist = $request->input('artist');
+        $song->song_title = $request->input('songTitle');
+        $song->url = $request->input('songTitle');
+
+        $song->save();
+
+        $user->songs()->attach($song);
+
+        $user->save();
+
+        return redirect()->route('guest.playlist')->with('Status', 'Successfully added song to user');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Song  $song
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Song $song)
+    public function edit($id)
     {
-        //
-    }
+        if(!$user = Auth::user()){
+            return redirect()->route('guest.login')->with(['Status', 'Please log in first..']);
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Song  $song
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Song $song)
-    {
-        //
+        $song = Song::all()->where('id', $id)->first();
+
+        return view('guests.playlist', compact("user", "song"));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Song  $song
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request $request
+     * @param $id
+     * @return void
      */
-    public function update(Request $request, Song $song)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'artist'=>'required',
+            'songTitle'=> 'required',
+            //'url' => 'required'
+        ]);
+
+        if(!$user = Auth::user()){
+            return redirect()->route('guest.login')->with(['Status', 'Please log in first..']);
+        }
+
+        $song = Song::where('id', $id)->first();
+        $song->artist = $request['artist'];
+        $song->song_title = $request['songTitle'];
+        $song->url = $request['songTitle'];
+
+        $song->update();
+
+        return redirect()->route('guest.playlist')->with('Status', 'Successfully updated song details');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Song  $song
+     * @param $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Song $song)
+    public function destroy($id)
     {
-        //
+        if(!$user = Auth::user()){
+            return redirect()->route('guest.login')->with(['Status', 'Please log in first..']);
+        }
+
+        $song = Song::all()->where('id', '=', $id)->first();
+
+        $user->songs()->detach($song);
+        $song->delete();
+
+        return redirect()->route('guest.playlist')->with('Status', 'Success');
     }
 }

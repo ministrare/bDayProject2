@@ -6,29 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Song extends Model
 {
+    protected $fillable = [
+        'artist', 'song_title', 'url',
+    ];
+
     /**
      * The users that belong to the role.
      */
-    public function guest()
+    public function user()
     {
-        return $this->belongsToMany('App\Guest');
+        return $this->belongsToMany('App\User');
     }
-
-    /**
-     * The artist that belong to the song.
-     */
-    public function artist()
-    {
-        return $this->hasMany('App\Artist');
-    }
-
-    /**
-     * The songtitle that belong to the song.
-     */
-    public function songTitle()
-    {
-        return $this->hasMany('App\SongTitle');
-    }
-
 
 }

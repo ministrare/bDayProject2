@@ -1,4 +1,4 @@
-@extends('layouts.guests')
+@extends('layouts.app')
 
 @section('content')
     <div class="main-body">
@@ -28,15 +28,9 @@
              -->
         </div>
         <div class="btn-div bottom text-align-right">
-            <a class="button done dark" type="button" href="{{ route('logout') }}"
-               onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">
+            <a class="button done dark" type="button" href="{{ route('logout') }}">
                 {{ __('Logout') }}
             </a>
-
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
         </div>
     </div>
 @endsection

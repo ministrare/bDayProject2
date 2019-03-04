@@ -26,6 +26,6 @@ class Admin
 
         }
 
-        return redirect()->route('login')->with('error','You dont have admin access');
+        return redirect()->route('home')->with('error','You dont have admin access');
     }
 }
