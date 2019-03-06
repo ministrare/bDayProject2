@@ -8,8 +8,8 @@
                     <img src="./images/Path 34.svg">
                 </span>
             <span class="text-wishes">
-                   <h2 class="light-big text-white line-he">Join us as I celebrate</h2>
-                <h2 class="big-italic text-white line-he">My Birthday with a blast!</h2>
+                   <h2 class="light-big text-white line-he">50 jaar, dat moet gevierd worden</h2>
+                <h2 class="big-italic text-white line-he">Doe mee met mijn meezing- en dansfeest!</h2>
                </span>
             <span class="anchor-box">
                         <img class="r-right" src="./images/Path 34.svg">
@@ -26,6 +26,9 @@
             <div class="picture-main"><img src="./images/dirk-image.jpg"></div>
             <div class="text-content-main">
                 <p>
+                    Op 2 mei 2019 is 1/3de van mijn leven voorbij:-) Dat moet gevierd worden. We gaan er een leuk feestje
+                    van maken. Om het voor iedereen even gezellig te maken, nodig ik jullie allemaal uit om jullie Top 3 van 
+                    meezing- en/of dansliedje door te sturen. 
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                     industry's standard dummy text ever since the Lorem Ipsum has been the industry's standard dummy
                     text ever since the Lorem Ipsum has been the industry's
