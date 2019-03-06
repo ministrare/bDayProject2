@@ -7,7 +7,7 @@
                     <img src="/images/Path 34.svg">
                 </span>
             <span class="text-wishes">
-                   <h2 class="light-big text-white line-he">Join us as I celebrate</h2>
+                   <h2 class="light-big text-white line-he">50 jaar, dat moet gevierd worden!</h2>
                 <h2 class="big-italic text-white line-he">My Birthday with a blast!</h2>
                </span>
             <span class="anchor-box">
