@@ -67,7 +67,7 @@
             <div class="location-content">
                 <div class="location-tent">
                     <span class="f-box f-box-label">Locatie</span>
-                    <span class="f-box f-box-text">VVW Zutendaal<br> Sellerveldstraat 10, Zutendaal</span><br>Gelieve de ingang via de Genkerweg te nemen<br>
+                    <span class="f-box f-box-text">VVW Zutendaal<br> Sellerveldstraat 10, Zutendaal</span><br>Gelieve de ingang via de Genkerweg te nemen en door te rijden tot het einde<br>
                     <span class="f-box f-box-label">Tijdstip</span>
                     <span class="f-box f-box-text">Vanaf 20:00 - ???</span><br>
                 </div>
