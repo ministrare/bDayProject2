@@ -16,7 +16,8 @@ Clone this repository on your local computer. Run the `docker-compose up -d`.
 git clone git@github.com:ministrare/bDayProject2.git
 cd bDayProject2/
 git fetch --all
-docker-compose up -d
+cd laradock
+docker-compose up -d nginx mariadb phpmyadmin
 ```
 
 (if you get a error on the last command, follow step one of (this tutorial)[https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04] and after completion retry last command)
