@@ -7,8 +7,8 @@
                 <img src="./images/Path 34.svg">
             </span>
             <span class="text-wishes">
-                <h2 class="light-big text-white line-he">Before we sail!</h2>
-                <h2 class="big-italic text-white line-he">Signup with the captain!</h2>
+                <h2 class="light-big text-white line-he">Voordat we feesten...</h2>
+                <h2 class="big-italic text-white line-he">Schrijf u als matroos</h2>
             </span>
             <span class="anchor-box">
                 <img class="r-right" src="./images/Path 34.svg">
@@ -23,7 +23,7 @@
             </div>
             <div class="btn-div login">
                 <a href="{{ route('home') }}" class="button login-btn dark" type="button">Home</a>
-                <button class="button login-btn dark" type="submit">Continue</button>
+                <button class="button login-btn dark" type="submit">Ga verder</button>
             </div>
         </form>
     </div>
