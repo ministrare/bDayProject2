@@ -36,29 +36,6 @@ You can connect to web server using `docker exec` command to perform various ope
 docker exec -it laradock_workspace_1 bash
 ```
 
-## PHP
-
-The installed version of PHP is 7.2
-
-#### Extensions
-
-By default following extensions are installed.
-
-* mysqli
-* mbstring
-* zip
-* intl
-* mcrypt
-* curl
-* json
-* iconv
-* xml
-* xmlrpc
-* gd
-
-> If you want to install more extension, just update `./bin/webserver/Dockerfile`. You can also generate a PR and we will merge if seems good for general purpose.
-> You have to rebuild the docker image by running `docker-compose build` and restart the docker containers.
-
 ## phpMyAdmin
 
 phpMyAdmin is configured to run on port 8080. Use following default credentials.
@@ -66,7 +43,3 @@ phpMyAdmin is configured to run on port 8080. Use following default credentials.
 http://localhost:8080/  
 username: root  
 password: root
-
-## Redis
-
-Please read from appropriate version branch.
