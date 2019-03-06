@@ -13,7 +13,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Dirks 50th birthday') }}</title>
+    <title>{{ config('app.name', 'Dirks 50ste verjaardag') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/boilerplate.css') }}" rel="stylesheet" type="text/css">
@@ -25,8 +25,8 @@
         <div class="gheader-text">
             <img src="/images/Group 26.svg">
             <div class="top-text">
-                <h2 class="light-big line-he grey-color">Ahoy Mates!</h2>
-                <h2 class="big-italic grey-color">Dirks 50th birthday</h2>
+                <h2 class="light-big line-he grey-color">Alle zeilen los!</h2>
+                <h2 class="big-italic grey-color">Dirks 50ste verjaardag</h2>
             </div>
         </div>
     </div>
