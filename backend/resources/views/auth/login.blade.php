@@ -8,8 +8,8 @@
                 <img src="/images/Path 34.svg">
             </span>
             <span class="text-wishes">
-                <h2 class="light-big text-white line-he">Before we sail!</h2>
-                <h2 class="big-italic text-white line-he">Signup as the captain!</h2>
+                <h2 class="light-big text-white line-he">Voordat we feesten</h2>
+                <h2 class="big-italic text-white line-he">Schrijf u in als matroos!</h2>
             </span>
             <span class="anchor-box">
                 <img class="r-right" src="/images/Path 34.svg">
