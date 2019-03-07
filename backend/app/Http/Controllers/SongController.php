@@ -20,7 +20,7 @@ class SongController extends Controller
         }
 
         $songs = $user->songs;
-        $message = $user->message->message;
+        $message = isset($user->message->message) ? $user->message->message : '';
 
         return view('guests.playlist', compact("user", "songs", "message"));
     }
